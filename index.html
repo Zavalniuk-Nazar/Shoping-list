@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Shoping list</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="content">
+            <div class="theme">
+                <div class="container">
+                    <div class="theme-row">
+                        <span class="dark-mode">DM</span>
+                        <div class="toggle">
+                            <label class="switch">
+                                <input type="checkbox" class="switch-button">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <div class="container">
+                    <h1 class="title-text">Shoping List</h1>
+                </div>
+            </div>
+            <div class="main-input">
+                <div class="container">
+                    <div class="main-input-row">
+                        <input type="text" class="item-input" required>
+                        <div class="placeholder">Enter a new item</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item-list">
+                <div class="container">
+                    <ul class="list">
+                        <li class="list-item">
+                            <div class="list-item-row">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox-button">
+                                    <span class="square"></span>
+                                </label>
+                                <div class="list-item-text">
+                                    <span class="text">List item 1</span>
+                                </div>
+                                <div class="white-space"></div>
+                                <div class="input-price">
+                                    <div class="input-price-row">
+                                        <input type="number" step="any" class="price valid" required></input>
+                                        <div class="placeholder-price">Set a price</div>
+                                    </div>
+                                </div>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-item-row">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox-button">
+                                    <span class="square"></span>
+                                </label>
+                                <div class="list-item-text">
+                                    <span class="text">List item 2</span>
+                                </div>
+                                <div class="white-space"></div>
+                                <div class="input-price">
+                                    <div class="input-price-row">
+                                        <input type="number" step="any" class="price valid" required></input>
+                                        <div class="placeholder-price">Set a price</div>
+                                    </div>
+                                </div>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-item-row">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox-button">
+                                    <span class="square"></span>
+                                </label>
+                                <div class="list-item-text">
+                                    <span class="text">List item 3</span>
+                                </div>
+                                <div class="white-space"></div>
+                                <div class="input-price">
+                                    <div class="input-price-row">
+                                        <input type="number" step="any" class="price valid" required></input>
+                                        <div class="placeholder-price">Set a price</div>
+                                    </div>
+                                </div>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-item-row">
+                                <label class="checkbox">
+                                    <input type="checkbox" class="checkbox-button checkbox4">
+                                    <span class="square"></span>
+                                </label>
+                                <div class="list-item-text">
+                                    <span class="text">List item 4</span>
+                                </div>
+                                <div class="white-space"></div>
+                                <div class="input-price">
+                                    <div class="input-price-row">
+                                        <input type="number" step="any" class="price valid" required></input>
+                                        <div class="placeholder-price">Set a price</div>
+                                    </div>
+                                </div>
+                                <button class="delete">Delete</button>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="remove-item-list">
+                        <div class="remove-item-list-row">
+                            <button class="button-remove-item-list">Delete all</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="total-price">
+                <div class="container">
+                    <div class="total-price-text">Total Price: 2989.35</div>
+                </div>
+            </div>
+            <div class="information-window collapsed">
+                <div class="information-window-row collapsed">
+                    <div class="information-text">
+                        <span class="text-clone">List item 1 clone Web browsers are very complicated pieces of software
+                            with a lot of moving parts, many of which can't be controlled or
+                            manipulated by a web developer using JavaScript. You might think that such limitations are a
+                            bad thing, but browsers are
+                            locked down for good reasons, mostly centering around security. Imagine if a web site could
+                            get access to your stored
+                            passwords or other sensitive information, and log into websites as if it were you?
+
+                            Despite the limitations, Web APIs still give us access to a lot of functionality that enable
+                            us to do a great many
+                            things with web pages. There are a few really obvious bits you'll reference regularly in
+                            your code — consider the
+                            following diagram, which represents the main parts of a browser directly involved in viewing
+                            web pages:</span>
+                    </div>
+                    <div class="information-input">
+                        <label for="price-clone" class="price-clone-row">
+                            Price:
+                            <div class="price-clone-block">
+                                <input type="number" id="price-clone" class="price-clone valid">
+                            </div>
+                        </label>
+                    </div>
+                    <div class="information-buttons">
+                        <button class="collapse">Collapse</button>
+                        <button class="delete-clone">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div class="confirm-remove-list collapsed">
+                <div class="confirm-remove-list-body collapsed">
+                    <div class="confirm-text">Delete all list?</div>
+                    <div class="confirm-buttons">
+                        <button class="button-yes">Yes</button>
+                        <button class="button-no">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
