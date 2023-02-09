@@ -1,3 +1,5 @@
+/* Null styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +10,10 @@
 li {
     list-style: none;
 }
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Main styles */
 
 html {
     font-family: 'Roboto', sans-serif;
@@ -35,6 +41,10 @@ html {
     position: relative;
     padding: 0.5rem;
 }
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Theme switcher */
 
 .theme {
     margin-bottom: 0.2rem;
@@ -98,6 +108,10 @@ html {
     background: #0F0B21;
 }
 
+/* --------------------------------------------------------------------------------------- */
+
+/* Title */
+
 .title {
     margin-bottom: 1.5rem;
 }
@@ -105,6 +119,50 @@ html {
 .title-text {
     text-align: center;
     font-size: 1.6rem;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Inputs */
+
+.input {
+    border: 0.05rem solid #263057;
+    border-radius: 0.1rem;
+    color: #263057;
+    background: transparent;
+}
+
+.input.invalid {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+
+.input.valid:focus {
+    outline: 0.05rem solid #263057;
+}
+
+.input.invalid:focus {
+    outline: 0.05rem solid #ff0000;
+}
+
+.input.input-with-placeholder:focus+.placeholder,
+.input.input-with-placeholder:valid+.placeholder,
+.input.input-with-placeholder.invalid+.placeholder {
+    display: none;
+}
+
+.input[type="number"]::-webkit-inner-spin-button,
+.input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.placeholder {
+    position: absolute;
+    pointer-events: none;
+    color: #263057;
 }
 
 .main-input {
@@ -118,37 +176,142 @@ html {
 
 }
 
-.item-input {
+.input.item-input {
     width: 9.5rem;
     height: 1.2rem;
     padding: 0.1rem;
     font-size: 0.9rem;
     text-align: center;
-    color: #263057;
-    background: #eee;
-    border: 0.05rem solid #263057;
     border-radius: 0.25rem;
 }
 
-.placeholder {
-    position: absolute;
-    pointer-events: none;
+.input-price {
+    margin-right: 0.5rem;
+    flex: 0 0 4rem;
+}
+
+.input-price-row {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.input-price-row.invalid::after {
+    margin-top: 0.1rem;
+    content: 'Value must be a number';
+    text-align: center;
+    font-size: 0.55rem;
+    color: #ff0000;
+}
+
+.input.price {
+    width: 3.7rem;
+    height: 0.85rem;
+    padding: 0.1rem;
+    font-size: 0.7rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.information-input {
+    min-width: 100%;
+}
+
+.price-clone-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0 0.75rem;
+}
+
+.price-clone-block {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+}
+
+.price-clone-block.invalid::after {
+    margin-top: 0.15rem;
+    content: 'Value must be a number';
+    text-align: center;
+    font-size: 0.6rem;
+    color: #ff0000;
+}
+
+.input.price-clone {
+    margin-left: 0.6rem;
+    padding: 0.1rem;
+    font-size: 0.75rem;
+    text-indent: 0.1rem;
+}
+
+.placeholder.price {
+    font-size: 0.7rem;
+    top: 0.175rem;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Buttons */
+
+.remove-item-list-row {
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.information-buttons,
+.confirm-buttons {
+    display: flex;
+    column-gap: 2px;
+    min-width: 100%;
+}
+
+.button {
+    font-family: inherit;
+    cursor: pointer;
+    color: #eee;
+    background: #263057;
+    border: 0.05rem solid #263057;
+    border-radius: 0.1rem;
+}
+
+.button:active {
     color: #263057;
+    background: #eee;
 }
 
-.item-input:focus {
-    outline: 0.05rem solid #263057;
+.button.windows {
+    width: 50%;
 }
 
-.item-input:focus+.placeholder,
-.price:focus+.placeholder-price {
-    display: none;
+.button.delete {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 1.15rem;
+    font-size: 0.7rem;
 }
 
-.item-input:valid+.placeholder,
-.price:valid+.placeholder-price {
-    display: none;
+.button.remove-item-list {
+    width: 4rem;
+    height: 1.25rem;
+    font-size: 0.8rem;
 }
+
+.button.windows.information {
+    height: calc(3vh + 0.10235rem);
+    max-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.button.windows.confirm {
+    height: 22px;
+    font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Item list */
 
 .item-list {
     flex: 1 1 auto;
@@ -245,104 +408,9 @@ html {
     flex: 1;
 }
 
-.input-price {
-    margin-right: 0.5rem;
-    flex: 0 0 4rem;
-}
+/* --------------------------------------------------------------------------------------- */
 
-.input-price-row {
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-}
-
-.input-price-row.invalid::after {
-    margin-top: 0.1rem;
-    content: 'Value must be a number';
-    text-align: center;
-    font-size: 0.55rem;
-    color: #ff0000;
-}
-
-.price {
-    width: 3.7rem;
-    height: 0.85rem;
-    padding: 0.1rem;
-    font-size: 0.7rem;
-    text-align: center;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background: #eee;
-    color: #263057;
-    border: 0.05rem solid #263057;
-    border-radius: 0.1rem;
-}
-
-.price::-webkit-inner-spin-button,
-.price::-webkit-outer-spin-button,
-.price-clone::-webkit-inner-spin-button,
-.price-clone::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
-}
-
-.price.invalid {
-    border-color: #ff0000;
-    color: #ff0000;
-}
-
-.price.invalid:focus {
-    outline: 0.05rem solid #ff0000;
-}
-
-.price.valid:focus {
-    outline: 0.05rem solid #263057;
-}
-
-.placeholder-price {
-    font-size: 0.7rem;
-    position: absolute;
-    top: 0.175rem;
-    pointer-events: none;
-    color: #263057;
-}
-
-.price.invalid+.placeholder-price {
-    display: none;
-}
-
-.delete {
-    flex: 0 0 auto;
-    width: 2.5rem;
-    height: 1.15rem;
-    font-family: inherit;
-    font-size: 0.7rem;
-    cursor: pointer;
-    color: #eee;
-    background: linear-gradient(180deg, #273158 0%, #0C244D 100%);
-    border: 0.05rem solid #263057;
-    border-radius: 0.1rem;
-}
-
-.remove-item-list-row {
-    display: flex;
-    flex-flow: row-reverse;
-}
-
-.button-remove-item-list {
-    font-family: inherit;
-    font-size: 0.8rem;
-    width: 4rem;
-    height: 1.25rem;
-    cursor: pointer;
-    color: #eee;
-    background: linear-gradient(180deg, #273158 0%, #0C244D 100%);
-    border-radius: 0.1rem;
-    border: 0.05rem solid #263057;
-}
+/* Total price */
 
 .total-price {
     font-size: 1.2rem;
@@ -354,6 +422,10 @@ html {
     border-radius: 0.25rem;
     color: #eee;
 }
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Windows */
 
 .information-window.collapsed,
 .confirm-remove-list.collapsed {
@@ -370,6 +442,18 @@ html {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.information-window-row.deployed,
+.confirm-remove-list-body.deployed {
+    transform: scale(1);
+    transition: transform 0.8s ease 0s;
+}
+
+.information-window-row.collapsed,
+.confirm-remove-list-body.collapsed {
+    transform: scale(0);
+    transition: transform 0.8s ease 0s;
 }
 
 .information-window-row {
@@ -407,84 +491,6 @@ html {
     word-break: break-word;
 }
 
-.information-input {
-    min-width: 100%;
-}
-
-.price-clone-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0 0.75rem;
-}
-
-.price-clone-block {
-    flex: 1;
-    display: flex;
-    flex-flow: column;
-}
-
-.price-clone {
-    margin-left: 0.6rem;
-    padding: 0.1rem;
-    font-size: 0.75rem;
-    text-indent: 0.1rem;
-    color: #263057;
-    background: transparent;
-    border: 0.05rem solid #263057;
-    border-radius: 0.1rem;
-}
-
-.price-clone-block.invalid::after {
-    margin-top: 0.15rem;
-    content: 'Value must be a number';
-    text-align: center;
-    font-size: 0.6rem;
-    color: #ff0000;
-}
-
-.price-clone.invalid {
-    color: #ff0000;
-    border-color: #ff0000;
-}
-
-.price-clone.valid:focus {
-    outline: 0.05rem solid #263057;
-}
-
-.price-clone.invalid:focus {
-    outline: 0.05rem solid #ff0000;
-}
-
-.information-buttons {
-    display: flex;
-    column-gap: 2px;
-    min-width: 100%;
-}
-
-.collapse,
-.delete-clone {
-    font-family: inherit;
-    font-size: 1rem;
-    width: 50%;
-    height: calc(3vh + 0.10235rem);
-    max-height: 1.5rem;
-    cursor: pointer;
-    color: #eee;
-    background: #263057;
-    border: 0.05rem solid #263057;
-    border-radius: 0.1rem;
-}
-
-.delete:active,
-.button-remove-item-list:active,
-.collapse:active,
-.delete-clone:active,
-.button-yes:active,
-.button-no:active {
-    color: #263057;
-    background: #eee;
-}
-
 .confirm-remove-list-body {
     display: flex;
     flex-flow: column;
@@ -497,40 +503,10 @@ html {
     border-radius: 0.25rem;
 }
 
-/* ? animation */
-.confirm-remove-list-body.deployed,
-.information-window-row.deployed {
-    transform: scale(1);
-    transition: transform 0.8s ease 0s;
-}
-
-.confirm-remove-list-body.collapsed,
-.information-window-row.collapsed {
-    transform: scale(0);
-    transition: transform 0.8s ease 0s;
-}
-
 .confirm-text {
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-.confirm-buttons {
-    display: flex;
-    column-gap: 2px;
-    min-width: 100%;
-    height: 22px;
-}
-
-.button-yes,
-.button-no {
-    font-family: inherit;
-    font-size: 0.8rem;
-    width: 50%;
-    cursor: pointer;
-    border: 0.05rem solid #263057;
-    border-radius: 0.1rem;
-    color: #eee;
-    background: #263057;
-}
+/* --------------------------------------------------------------------------------------- */
