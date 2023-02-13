@@ -66,11 +66,11 @@
     background: transparent;
 }
 
-.checkbox-button.dark-theme:checked+.square::before {
+.checkbox-button:checked+.square.dark-theme::before {
     border-color: #eee;
 }
 
-.checkbox-button.dark-theme:checked+.square {
+.checkbox-button:checked+.square.dark-theme {
     background: #18122e;
 }
 
