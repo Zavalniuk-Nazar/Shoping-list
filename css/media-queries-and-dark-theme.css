@@ -1,0 +1,105 @@
+@media (max-width: 320px) {
+    .wrapper {
+        min-width: 320px;
+    }
+}
+
+@media (min-width: 320px) {
+    html {
+        font-size: 5vw;
+    }
+}
+
+@media (min-width: 430px) {
+    html {
+        font-size: 1.34375rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .content {
+        max-width: 850px;
+    }
+}
+
+@media (hover :hover) {
+    .square:hover {
+        background: #fff;
+    }
+
+    .square.dark-theme:hover {
+        background: #18122e;
+    }
+}
+
+.dark-theme {
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border-color 0.6s ease-in-out;
+}
+
+.page.dark-theme {
+    color: #eee;
+    background: #0F0B21;
+}
+
+.input.dark-theme {
+    color: #eee;
+    border-color: #3B336C;
+}
+
+.input.dark-theme.valid:focus {
+    outline-color: #3B336C;
+}
+
+.placeholder.dark-theme {
+    color: #eee;
+}
+
+.list-item.dark-theme {
+    border-color: #3B336C;
+}
+
+.checkbox.dark-theme {
+    border-color: #3b336c80;
+}
+
+.square.dark-theme {
+    background: transparent;
+}
+
+.checkbox-button.dark-theme:checked+.square::before {
+    border-color: #eee;
+}
+
+.checkbox-button.dark-theme:checked+.square {
+    background: #18122e;
+}
+
+.text.dark-theme::before {
+    background: #eee;
+}
+
+.button.dark-theme {
+    background: #221c44;
+    border-color: #221c44;
+}
+
+.button.dark-theme:active {
+    color: #eee;
+    background: transparent;
+}
+
+.total-price.dark-theme {
+    color: #eee;
+    background: #221C44;
+}
+
+.information-window-row.dark-theme,
+.confirm-remove-list-body.dark-theme {
+    background: #0F0B21;
+    border-color: #3B336C;
+}
+
+.information-text.dark-theme::-webkit-scrollbar-thumb {
+    background: #b4aaee4d;
+    border-color: #3B336C;
+}

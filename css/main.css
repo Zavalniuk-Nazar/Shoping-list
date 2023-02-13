@@ -15,9 +15,8 @@ li {
 
 /* Main styles */
 
-html {
+.page {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
     color: #263057;
     background-color: #eee;
 }
@@ -28,18 +27,15 @@ html {
     min-height: 100vh;
 }
 
-.content,
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-}
-
 .content {
+    margin: 0 auto;
+    padding: 10px;
     flex: 1 1 auto;
     display: flex;
     flex-flow: column;
+    max-width: 100vw;
+    min-width: 300px;
     position: relative;
-    padding: 0.5rem;
 }
 
 /* --------------------------------------------------------------------------------------- */
@@ -84,7 +80,7 @@ html {
     bottom: 0;
     background: linear-gradient(180deg, #273158 0%, #0C244D 100%);
     border-radius: 2.5rem;
-    transition: 0.6s cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition: transform 0.6s cubic-bezier(0.39, 0.58, 0.57, 1);
 }
 
 .slider:before {
@@ -96,7 +92,7 @@ html {
     bottom: 0.1rem;
     background: #eee;
     border-radius: 50%;
-    transition: 0.6s cubic-bezier(0.39, 0.58, 0.57, 1);
+    transition: transform 0.6s cubic-bezier(0.39, 0.58, 0.57, 1);
 }
 
 .switch-button:checked+.slider {
@@ -126,6 +122,7 @@ html {
 /* Inputs */
 
 .input {
+    font-family: inherit;
     border: 0.05rem solid #263057;
     border-radius: 0.1rem;
     color: #263057;
@@ -145,9 +142,9 @@ html {
     outline: 0.05rem solid #ff0000;
 }
 
-.input.input-with-placeholder:focus+.placeholder,
-.input.input-with-placeholder:valid+.placeholder,
-.input.input-with-placeholder.invalid+.placeholder {
+.input:focus+.placeholder,
+.input:valid+.placeholder,
+.input.invalid+.placeholder {
     display: none;
 }
 
@@ -198,7 +195,7 @@ html {
 }
 
 .input-price-row.invalid::after {
-    margin-top: 0.1rem;
+    margin-top: 2px;
     content: 'Value must be a number';
     text-align: center;
     font-size: 0.55rem;
@@ -216,23 +213,19 @@ html {
 }
 
 .information-input {
-    min-width: 100%;
-}
-
-.price-clone-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0 0.75rem;
+    margin: 0.59302rem 0 0.75rem;
+    width: 100%;
 }
 
 .price-clone-block {
-    flex: 1;
+    position: relative;
     display: flex;
     flex-flow: column;
+    align-items: center;
 }
 
 .price-clone-block.invalid::after {
-    margin-top: 0.15rem;
+    margin-top: 3px;
     content: 'Value must be a number';
     text-align: center;
     font-size: 0.6rem;
@@ -240,15 +233,20 @@ html {
 }
 
 .input.price-clone {
-    margin-left: 0.6rem;
+    width: calc(100% - 6.3px);
     padding: 0.1rem;
     font-size: 0.75rem;
-    text-indent: 0.1rem;
+    text-align: center;
 }
 
 .placeholder.price {
     font-size: 0.7rem;
     top: 0.175rem;
+}
+
+.placeholder.price-clone {
+    top: 0.075rem;
+    font-size: 0.8rem;
 }
 
 /* --------------------------------------------------------------------------------------- */
@@ -299,7 +297,7 @@ html {
 }
 
 .button.windows.information {
-    height: calc(3vh + 0.10235rem);
+    height: calc(4vh + 0.10235rem);
     max-height: 1.5rem;
     font-size: 1rem;
 }
@@ -315,7 +313,6 @@ html {
 
 .item-list {
     flex: 1 1 auto;
-    max-width: 95.34884vw;
 }
 
 .list-item {
@@ -342,7 +339,7 @@ html {
     height: 0.9rem;
     margin-right: 1rem;
     cursor: pointer;
-    border: 0.075rem solid rgba(38, 48, 87, 0.5);
+    border: 0.075rem solid #26305780;
     border-radius: 0.1rem;
 }
 
@@ -353,28 +350,22 @@ html {
 }
 
 .square {
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
     background: #eee;
 }
 
-/* ? Style for PC */
-/* 
-.square:hover {
-    background: #fff;
-} 
-*/
-
 .checkbox-button:checked+.square::before {
+    position: absolute;
+    top: 0.1rem;
     content: "";
     width: 0.25rem;
     height: 0.5rem;
     border: solid #263057;
-    border-width: 0 0.1rem 0.1rem 0;
+    border-width: 0 0.125rem 0.125rem 0;
     transform: rotate(45deg);
-    position: absolute;
-    top: 0.1rem;
-    left: 0.3rem;
 }
 
 .checkbox-button:checked+.square {
@@ -382,20 +373,20 @@ html {
 }
 
 .list-item-text {
-    margin-right: 0.5rem;
     position: relative;
+    margin-right: 0.5rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 .text::before {
-    content: '';
-    width: 0;
-    height: 0.075rem;
     position: absolute;
     top: 50%;
     left: 0;
+    content: '';
+    width: 0;
+    height: 0.075rem;
     background: #263057;
 }
 
@@ -413,14 +404,14 @@ html {
 /* Total price */
 
 .total-price {
-    font-size: 1.2rem;
     margin-top: 1.9rem;
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
     text-align: center;
     word-break: break-word;
-    padding: 0.8rem 0;
+    color: #eee;
     background: linear-gradient(180deg, #273158 0%, #0C244D 100%);
     border-radius: 0.25rem;
-    color: #eee;
 }
 
 /* --------------------------------------------------------------------------------------- */
@@ -434,14 +425,14 @@ html {
 
 .information-window.deployed,
 .confirm-remove-list.deployed {
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     min-width: 100%;
     min-height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .information-window-row.deployed,
@@ -463,7 +454,7 @@ html {
     align-items: center;
     padding: 1rem 1.5rem;
     max-width: 62.794%;
-    min-height: 17.92vh;
+    min-height: 80px;
     max-height: 30vh;
     border: 0.05rem solid;
     background: #eee;
