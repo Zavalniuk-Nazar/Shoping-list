@@ -32,10 +32,6 @@
     }
 }
 
-.dark-theme {
-    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, border-color 0.6s ease-in-out;
-}
-
 .page.dark-theme {
     color: #eee;
     background: #0F0B21;
@@ -46,7 +42,7 @@
     border-color: #3B336C;
 }
 
-.input.dark-theme.valid:focus {
+.input.dark-theme:focus {
     outline-color: #3B336C;
 }
 

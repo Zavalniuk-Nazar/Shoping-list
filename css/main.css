@@ -38,6 +38,10 @@ li {
     position: relative;
 }
 
+.only-for-js {
+    display: none;
+}
+
 /* --------------------------------------------------------------------------------------- */
 
 /* Theme switcher */
@@ -129,22 +133,12 @@ li {
     background: transparent;
 }
 
-.input.invalid {
-    color: #ff0000;
-    border-color: #ff0000;
-}
-
-.input.valid:focus {
+.input:focus {
     outline: 0.05rem solid #263057;
 }
 
-.input.invalid:focus {
-    outline: 0.05rem solid #ff0000;
-}
-
 .input:focus+.placeholder,
-.input:valid+.placeholder,
-.input.invalid+.placeholder {
+.input:valid+.placeholder {
     display: none;
 }
 
@@ -194,14 +188,6 @@ li {
     align-items: center;
 }
 
-.input-price-row.invalid::after {
-    margin-top: 2px;
-    content: 'Value must be a number';
-    text-align: center;
-    font-size: 0.55rem;
-    color: #ff0000;
-}
-
 .input.price {
     width: 3.7rem;
     height: 0.85rem;
@@ -222,14 +208,6 @@ li {
     display: flex;
     flex-flow: column;
     align-items: center;
-}
-
-.price-clone-block.invalid::after {
-    margin-top: 3px;
-    content: 'Value must be a number';
-    text-align: center;
-    font-size: 0.6rem;
-    color: #ff0000;
 }
 
 .input.price-clone {
@@ -386,7 +364,7 @@ li {
     left: 0;
     content: '';
     width: 0;
-    height: 0.075rem;
+    height: 2px;
     background: #263057;
 }
 
@@ -444,7 +422,7 @@ li {
 .information-window-row.collapsed,
 .confirm-remove-list-body.collapsed {
     transform: scale(0);
-    transition: transform 0.8s ease 0s;
+    transition: transform 0.4s ease 0s;
 }
 
 .information-window-row {
